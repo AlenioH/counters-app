@@ -1,38 +1,69 @@
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
+}
+
+
+/* Button Styles */
+.button, .counter-button {
+  background: linear-gradient(135deg, #6e8efb, #a777e3); /* Gradient background */
+  border: none;
+  border-radius: 50px; /* Rounded corners */
+  color: white; /* Text color */
+  padding: 12px 24px; /* Padding for a comfortable size */
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  outline: none; /* Remove outline */
+  margin: 0 auto;
+}
+
+.counter-button {
+  font-size: 0.75rem;
+  padding: 6px 12px;
+}
+
+.button:hover {
+  background: linear-gradient(135deg, #a777e3, #6e8efb); /* Reverse gradient on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+  transform: translateY(-2px); /* Lift effect */
+}
+
+.button:active, .counter-button:active {
+  transform: translateY(2px); /* Pressed effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Reduce shadow */
+}
+
+
+.counter {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 1rem;
+  margin: 1rem auto 0;
+  border: 1px solid #a777e3;
+  border-radius: 3px;
+  padding: 0.3rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 1s ease, transform 1s ease;
 }
 
-.App-link {
-  color: #61dafb;
+.counter .value {
+  width: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.counter.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+button {
+  all: unset;
 }
